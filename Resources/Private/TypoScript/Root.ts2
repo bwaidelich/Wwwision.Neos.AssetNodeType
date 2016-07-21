@@ -1,0 +1,8 @@
+##
+# "AssetList" element
+#
+prototype(Wwwision.Neos.AssetNodeType:AssetList) {
+	assetNodes = ContentCollection {
+		nodePath = 'assetNodes'
+	}
+}

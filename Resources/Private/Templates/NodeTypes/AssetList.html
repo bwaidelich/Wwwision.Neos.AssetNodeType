@@ -1,0 +1,13 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<div{attributes -> f:format.raw()}>
+	<f:if condition="{assetNodes}">
+		<f:then>
+			{assetNodes -> f:format.raw()}
+		</f:then>
+		<f:else>
+			<f:if condition="{neos:rendering.inEditMode()}">
+				<em>Empty Asset list</em>
+			</f:if>
+		</f:else>
+	</f:if>
+</div>

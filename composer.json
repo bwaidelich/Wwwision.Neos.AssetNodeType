@@ -1,0 +1,18 @@
+{
+    "description": "Simple Neos package providing custom \"Asset\" & \"AssetList\" node types",
+    "type": "neos-package",
+    "require": {
+        "typo3/neos": "*"
+    },
+    "name": "wwwision/neos-assetnodetype",
+    "autoload": {
+        "psr-4": {
+            "Wwwision\\Neos\\AssetNodeType\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Wwwision.Neos.AssetNodeType"
+        }
+    }
+}

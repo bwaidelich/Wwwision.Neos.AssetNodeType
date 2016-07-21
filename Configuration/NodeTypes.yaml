@@ -1,0 +1,56 @@
+'Wwwision.Neos.AssetNodeType:Asset':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+  search:
+    fulltext:
+      isRoot: true
+  label: ${'Asset (' + q(node).property('asset').resource.fileName + ')'}
+  ui:
+    label: 'Asset'
+    icon: 'icon-file-o'
+    position: 700
+    inspector:
+      groups:
+        resources:
+          label: 'Resources'
+          position: 5
+          icon: 'icon-files-o'
+  properties:
+    'asset':
+      type: 'TYPO3\Media\Domain\Model\Asset'
+      ui:
+        inspector:
+          group: 'resources'
+        label: i18n
+        reloadIfChanged: TRUE
+
+'Wwwision.Neos.AssetNodeType:AssetList':
+  class: 'Wwwision\Neos\AssetNodeType\AssetListNode'
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+  ui:
+    label: 'Asset List'
+    icon: 'icon-files-o'
+    position: 710
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        resources:
+          label: 'Resources'
+          position: 5
+          icon: 'icon-files-o'
+  childNodes:
+    'assetNodes':
+      type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'Wwwision.Neos.AssetNodeType:Asset': TRUE
+  properties:
+    'assets':
+      type: array<TYPO3\Media\Domain\Model\Asset>
+      ui:
+        inspector:
+          group: 'resources'
+        label: 'Assets'
+        reloadIfChanged: TRUE
